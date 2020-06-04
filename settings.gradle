@@ -1,0 +1,2 @@
+rootProject.name='topik-corona'
+include ':app'
