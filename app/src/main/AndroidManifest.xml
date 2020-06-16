@@ -3,6 +3,7 @@
     package="com.example.topik_corona">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -15,7 +16,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".auth.RegisterActivity"></activity>
-        <activity android:name=".SplashActivity" />
         <activity android:name=".auth.LoginActivity" />
         <activity android:name=".MapsActivity" /> <!-- <meta-data -->
         <!-- android:name="com.google.android.gms.version" -->
@@ -30,6 +30,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".SplashScreen">
+
         </activity>
 
         <uses-library
