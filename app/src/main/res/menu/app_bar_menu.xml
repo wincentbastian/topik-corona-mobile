@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/notfication"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="Notification"
+        app:showAsAction="ifRoom|withText">
+    </item>
+
+<!--    <item-->
+<!--        android:id="@+id/account"-->
+<!--        android:icon="@drawable/ic_baseline_person_24"-->
+<!--        android:title="Account"-->
+<!--        app:showAsAction="ifRoom|withText">-->
+<!--    </item>-->
+</menu>
