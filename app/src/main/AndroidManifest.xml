@@ -3,7 +3,6 @@
     package="com.example.topik_corona">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -15,11 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".auth.RegisterActivity"></activity>
-        <activity android:name=".auth.LoginActivity" />
-        <activity android:name=".MapsActivity" /> <!-- <meta-data -->
-        <!-- android:name="com.google.android.gms.version" -->
-        <!-- android:value="@integer/10" /> -->
+        <activity android:name=".FormStatusActivity"></activity>
+        <activity
+            android:name=".EditProfileActivity"
+            android:label="Edit Profile" />
+        <activity
+            android:name=".auth.RegisterActivity"
+            android:label="Register" />
+        <activity
+            android:name=".auth.LoginActivity"
+            android:label="Login" />
+        <activity android:name=".MapsActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -31,9 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen">
-
-        </activity>
+        <activity android:name=".SplashScreen" />
 
         <uses-library
             android:name="org.apache.http.legacy"

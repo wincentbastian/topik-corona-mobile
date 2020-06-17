@@ -5,3 +5,4 @@ class Constants {
         const val BASE_URL = "http://192.168.43.132/topik-corona-server/"
     }
 }
+
