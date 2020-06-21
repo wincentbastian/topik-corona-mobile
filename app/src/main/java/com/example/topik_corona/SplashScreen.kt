@@ -28,14 +28,15 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        Timer("SplashScreenTime").schedule(3000){
+        Timer("SplashScreenTime").schedule(3000) {
             val sharedPreferences: SharedPreferences = getSharedPreferences("user",
                     Context.MODE_PRIVATE)
-            val intent = Intent(context, if(sharedPreferences.contains("id"))
+            val intent = Intent(context, if (sharedPreferences.contains("id"))
                 MainActivity::class.java else FeatureActivity::class.java
             )
             startActivity(intent)
             finish()
         }
+
     }
 }
