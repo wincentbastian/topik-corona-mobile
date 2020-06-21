@@ -129,12 +129,48 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Jenis Kelamin"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="15dp">
+        </TextView>
+
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:checked="true"
+                    android:text="Pria" />
+
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wanita" />
+
+
+        </RadioGroup>
+
         <com.google.android.material.button.MaterialButton
             android:layout_marginTop="25dp"
             android:id="@+id/button_register"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Daftar"/>
+
+
+
 
     </LinearLayout>
 

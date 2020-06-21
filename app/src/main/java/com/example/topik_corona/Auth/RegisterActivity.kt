@@ -5,6 +5,10 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import com.android.volley.NetworkResponse
 import com.android.volley.Request
@@ -28,6 +32,9 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var confirmPasswordEditText: TextInputEditText
     private lateinit var addressEditText: TextInputEditText
     private lateinit var registerButton: MaterialButton
+    private var radioGroup: RadioGroup? = null
+    private lateinit var radioButton: RadioButton
+    private var gender = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,13 +47,28 @@ class RegisterActivity : AppCompatActivity() {
         confirmPasswordEditText = findViewById(R.id.register_confirm_password)
         addressEditText = findViewById(R.id.register_address)
         registerButton = findViewById(R.id.button_register)
+        radioGroup = findViewById(R.id.rg_gender)
 
-        registerButton.setOnClickListener {
+        radioGroup?.setOnCheckedChangeListener { group, checkedId ->
+
+            gender = if (R.id.rb_male == checkedId) "P" else "W"
+//            Toast.makeText(applicationContext, gender, Toast.LENGTH_SHORT).show()
+        }
+
+
+            registerButton.setOnClickListener {
             val name = nameEditText.text
             val email = emailEditText.text
             val password = passwordEditText.text
             val confirmPassword = confirmPasswordEditText.text
             val address = addressEditText.text
+
+                Log.d("name", name.toString())
+                Log.d("email", email.toString())
+                Log.d("pass", password.toString())
+                Log.d("con", confirmPassword.toString())
+                Log.d("addrs", address.toString())
+                Log.d("gender", gender)
 
             if(name!!.isNotBlank() && email!!.isNotBlank() && password!!.isNotBlank() &&
                     confirmPassword!!.isNotBlank() && address!!.isNotBlank()){
@@ -58,6 +80,7 @@ class RegisterActivity : AppCompatActivity() {
                         requestParams["email"] = "$email"
                         requestParams["password"] = "$password"
                         requestParams["address"] = "$address"
+                        requestParams["gender"] = gender
 
                         val fileRequestParams = HashMap<String, DataPart>()
 
@@ -89,12 +112,17 @@ class RegisterActivity : AppCompatActivity() {
         if(status == 200){
             val userId = JSONObject(data).getString("id")
             val userName = JSONObject(data).getString("name")
+            val userEmail = JSONObject(data).getString("email")
+            val userGender = JSONObject(data).getString("gender")
+            val userAddress = JSONObject(data).getString("address")
 
             val sharedPreferences: SharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE)
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
             editor.putString("id", userId)
             editor.putString("name", userName)
-
+            editor.putString("email", userEmail)
+            editor.putString("gender", userGender)
+            editor.putString("address", userAddress)
             editor.apply()
 
             val intent = Intent(this, MainActivity::class.java)
@@ -105,4 +133,5 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "PHP Server Error", Toast.LENGTH_LONG).show()
         }
     }
+
 }

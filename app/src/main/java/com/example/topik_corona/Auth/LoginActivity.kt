@@ -88,6 +88,9 @@ class LoginActivity : AppCompatActivity() {
         val status_code = JSONObject(data).getInt("status_code")
         val userId = JSONObject(data).getString("id")
         val userName = JSONObject(data).getString("name")
+        val userEmail = JSONObject(data).getString("email")
+        val userGender = JSONObject(data).getString("gender")
+        val userAddress = JSONObject(data).getString("address")
 
 
         if (status_code == 200){
@@ -95,7 +98,9 @@ class LoginActivity : AppCompatActivity() {
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
             editor.putString("id", userId)
             editor.putString("name", userName)
-
+            editor.putString("email", userEmail)
+            editor.putString("gender", userGender)
+            editor.putString("address", userAddress)
             editor.apply()
 
             val intent = Intent(this, MainActivity::class.java)

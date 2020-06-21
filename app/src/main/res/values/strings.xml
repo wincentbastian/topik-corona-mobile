@@ -11,4 +11,24 @@
     <string name="confirm_password">Konfirmasi Sandi</string>
     <string name="address">Alamat</string>
 
+    <string name="msg_subscribed">Sukses</string>
+    <string name="msg_subscribe_failed">Failed</string>
+
+    <string-array name="gejala_array">
+        <item>demam</item>
+        <item>batuk kering</item>
+        <item>kelelahan</item>
+        <item>sakit dan nyeri</item>
+        <item>sakit tenggorokan</item>
+        <item>diare</item>
+        <item>konjungtivitis</item>
+        <item>sakit kepala</item>
+        <item>kehilangan kemampuan mencium bau</item>
+        <item>ruam pada kulit</item>
+        <item>kesulitan bernafas</item>
+        <item>nyeri atau tekanan di dada</item>
+        <item> kemampuan bicara dan bergerak</item>
+    </string-array>
+
+
 </resources>
