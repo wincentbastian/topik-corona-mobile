@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "537997294238",
+    "firebase_url": "https://topik-corona-mobile.firebaseio.com",
+    "project_id": "topik-corona-mobile",
+    "storage_bucket": "topik-corona-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537997294238:android:517814e39bff44d75f998f",
+        "android_client_info": {
+          "package_name": "com.example.topik_corona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537997294238-ohsdbs2708tsb027l4g7h4kr1ua59mqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.topik_corona",
+            "certificate_hash": "a19ef0dabe3b40ffb371843a57f186efd78226e9"
+          }
+        },
+        {
+          "client_id": "537997294238-j7vt3eimapnilau1u2defuk1n6450k6f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7J-AF3wcJHBS-8QFouUNdxHSBja0hatU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537997294238-j7vt3eimapnilau1u2defuk1n6450k6f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -42,7 +42,7 @@ public class MapsFragment extends Fragment {
         View v=inflater.inflate(R.layout.fragment_maps, container, false);
         mWebView = (WebView) v.findViewById(R.id.webview);
 
-        mWebView.loadUrl("http://sig-1705551066.herokuapp.com/test");
+        mWebView.loadUrl("http://sig-1705551066.herokuapp.com/peta-sebaran");
         progressBar =  v.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
 

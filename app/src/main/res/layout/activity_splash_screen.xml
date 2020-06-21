@@ -7,7 +7,10 @@
     tools:context=".SplashScreen">
 
     <TextView
-        android:id="@+id/percobaan"
+        android:id="@+id/text_splaash_screen"
+        android:text="Splash Screen"
+        android:textSize="50dp"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
