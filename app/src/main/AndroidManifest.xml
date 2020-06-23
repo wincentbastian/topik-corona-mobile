@@ -15,14 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".NotificationActivity"
-            android:label="Notification" >
+        <activity android:name=".Activity.NewsActivity"></activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:label="Notification">
             <intent-filter>
                 <action android:name="NOTIFICATION_ACTIVITY" />
-                <category android:name="android.intent.category.DEFAULT"/>
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity android:name=".FormStatusActivity" />
         <activity
             android:name=".EditProfileActivity"
