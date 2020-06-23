@@ -22,13 +22,14 @@
 
     <TextView
         android:id="@+id/title_news"
-        android:layout_marginLeft="15dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_news"
         android:text="Title"
         android:textStyle="bold"
+        android:layout_marginTop="3px"
         android:textColor="@color/colorBlack"
+        android:layout_centerHorizontal="true"
         android:gravity="left"
         android:textSize="20sp"/>
 
