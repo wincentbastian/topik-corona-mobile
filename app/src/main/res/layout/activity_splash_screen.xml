@@ -4,13 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/AppThemeMain"
+    android:background="@drawable/splash"
     tools:context=".SplashScreen">
 
-    <TextView
-        android:id="@+id/text_splaash_screen"
-        android:text="Splash Screen"
-        android:textSize="50dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

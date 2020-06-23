@@ -68,7 +68,7 @@ class NewsFragment : Fragment() {
 
         //connection
         AndroidNetworking.initialize(context)
-        AndroidNetworking.get("http://192.168.43.132/topik-khusus/topik-corona-server/showNews.php")
+        AndroidNetworking.get("http://10.0.2.2/topik-corona-server/showNews.php")
                 .build()
                 .getAsObject(News::class.java, object : ParsedRequestListener<News>{
                     override fun onResponse(response: News) {
@@ -85,7 +85,7 @@ class NewsFragment : Fragment() {
                 })
 
         AndroidNetworking.initialize(context)
-        AndroidNetworking.get("http://192.168.43.132/topik-khusus/topik-corona-server/showPopulerNews.php")
+        AndroidNetworking.get("http://10.0.2.2/topik-corona-server/showPopulerNews.php")
                 .build()
                 .getAsObject(News::class.java, object : ParsedRequestListener<News>{
                     override fun onResponse(response: News) {

@@ -36,11 +36,13 @@
             android:name=".Auth.LoginActivity"
             android:label="Login" />
         <activity android:name=".MapsActivity" />
-        <activity android:name=".Activity.FeatureActivity" />
+        <activity android:name=".Activity.FeatureActivity"
+            android:theme="@style/AppThemeMain"/>
         <activity android:name=".MainActivity" /> <!-- <meta-data -->
         <!-- android:name="com.google.android.geo.API_KEY" -->
         <!-- android:value="@string/google_maps_key" /> -->
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreen"
+            android:theme="@style/AppThemeMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
