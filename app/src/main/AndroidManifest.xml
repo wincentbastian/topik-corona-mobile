@@ -15,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.NewsActivity"></activity>
+        <activity android:name=".Activity.NewsActivity"
+            android:label="News">
+
+        </activity>
         <activity
             android:name=".NotificationActivity"
             android:label="Notification">

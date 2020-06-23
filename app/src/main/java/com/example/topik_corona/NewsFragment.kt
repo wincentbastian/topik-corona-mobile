@@ -10,7 +10,9 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.*
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
@@ -18,7 +20,6 @@ import com.example.topik_corona.adapter.BannerAdapter
 import com.example.topik_corona.adapter.MyAdapter
 import com.example.topik_corona.model.Data
 import com.example.topik_corona.model.News
-import kotlinx.android.synthetic.main.fragment_news.*
 
 /**
  * A simple [Fragment] subclass.
@@ -39,6 +40,9 @@ class NewsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
+        // Inflate the layout for this fragment
+        activity!!.title = "News"
 
         val view: View = inflater.inflate(R.layout.fragment_news, container, false)
         loadingRecycler = view.findViewById(R.id.loading_recycler)

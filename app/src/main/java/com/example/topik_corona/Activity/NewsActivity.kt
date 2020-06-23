@@ -1,8 +1,5 @@
 package com.example.topik_corona.Activity
 
-import android.annotation.SuppressLint
-import android.nfc.Tag
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -10,6 +7,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.NetworkResponse
 import com.android.volley.Request
 import com.android.volley.Response
@@ -21,8 +19,10 @@ import com.example.topik_corona.Utils.VolleyMultipartRequest
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
-import java.lang.Exception
-import java.util.HashMap
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class NewsActivity : AppCompatActivity() {
 
@@ -82,7 +82,7 @@ class NewsActivity : AppCompatActivity() {
 
 
             titleNewsPageTextView.text = titlePage
-            dateNewsPageTextView.text = "Diterbitkan: " + datePage
+            dateNewsPageTextView.text = "Diterbitkan: " + dateFormat(datePage)
             Picasso.get().load(imagePage).fit().into(imageNewsImageView, object : Callback{
                 override fun onSuccess() {
                     Log.e("PICASSO", "SUCCESS")
@@ -103,5 +103,14 @@ class NewsActivity : AppCompatActivity() {
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
         }
 
+    }
+    fun dateFormat(date: String) : String{
+        val pattern = "yyyy-MM-dd"
+        val pattern1 = "dd-MM-yyyy"
+        val inputDateFormat = SimpleDateFormat(pattern)
+        val outputDateFormat = SimpleDateFormat(pattern1)
+        val date2: Date = inputDateFormat.parse(date)
+        val date3: String = outputDateFormat.format(date2)
+        return date3
     }
 }

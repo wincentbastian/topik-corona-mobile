@@ -7,16 +7,9 @@
     android:fitsSystemWindows="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
-
 
         <ProgressBar
             android:id="@+id/loading_recycler"
@@ -41,11 +34,12 @@
                 android:id="@+id/populer_news"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Berita Populer!"
+                android:text="Berita Populer"
                 android:paddingLeft="15dp"
                 android:textColor="@color/colorBlack"
                 android:textStyle="bold"
-                android:textSize="25sp"
+                android:textSize="23sp"
+                android:layout_marginBottom="5dp"
                 />
 
 
