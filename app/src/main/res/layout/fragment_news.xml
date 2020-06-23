@@ -85,8 +85,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/news_user_name"
-                android:layout_marginTop="3dp">
+                android:layout_below="@+id/news_user_name">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/news_recycler_view"
