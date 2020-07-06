@@ -21,6 +21,8 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.topik_corona.Utils.Constants;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,7 +44,7 @@ public class MapsFragment extends Fragment {
         View v=inflater.inflate(R.layout.fragment_maps, container, false);
         mWebView = (WebView) v.findViewById(R.id.webview);
 
-        mWebView.loadUrl("http://sig-1705551066.herokuapp.com/peta-sebaran");
+        mWebView.loadUrl(Constants.BASE_URL + "webview-kelurahan.php");
         progressBar =  v.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -93,17 +95,17 @@ public class MapsFragment extends Fragment {
                 mWebView.loadUrl("about:blank");
 
                 //Showing and creating an alet dialog
-                AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
-                alertDialog.setTitle("Error");
-                alertDialog.setMessage("No internet connection was found!");
-
-                alertDialog.show();
+//                AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+//                alertDialog.setTitle("Error");
+//                alertDialog.setMessage("No internet connection was found!");
+//
+//                alertDialog.show();
             }
 
             @Override
             public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
                 super.onReceivedHttpError(view, request, errorResponse);
-                Toast.makeText(getContext(), "Please Check your connection", Toast.LENGTH_LONG).show();
+//                Toast.makeText(getContext(), errorResponse.getReasonPhrase(), Toast.LENGTH_LONG).show();
             }
         });
 

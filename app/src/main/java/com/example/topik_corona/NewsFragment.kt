@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
+import com.example.topik_corona.Utils.Constants
 import com.example.topik_corona.adapter.BannerAdapter
 import com.example.topik_corona.adapter.MyAdapter
 import com.example.topik_corona.model.Data
@@ -72,7 +73,7 @@ class NewsFragment : Fragment() {
 
         //connection
         AndroidNetworking.initialize(context)
-        AndroidNetworking.get("http://10.0.2.2/topik-corona-server/showNews.php")
+        AndroidNetworking.get( Constants.BASE_URL +"showNews.php")
                 .build()
                 .getAsObject(News::class.java, object : ParsedRequestListener<News>{
                     override fun onResponse(response: News) {
@@ -89,7 +90,7 @@ class NewsFragment : Fragment() {
                 })
 
         AndroidNetworking.initialize(context)
-        AndroidNetworking.get("http://10.0.2.2/topik-corona-server/showPopulerNews.php")
+        AndroidNetworking.get(Constants.BASE_URL + "showPopulerNews.php")
                 .build()
                 .getAsObject(News::class.java, object : ParsedRequestListener<News>{
                     override fun onResponse(response: News) {

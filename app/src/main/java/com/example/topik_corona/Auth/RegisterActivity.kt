@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var registerButton: MaterialButton
     private var radioGroup: RadioGroup? = null
     private lateinit var radioButton: RadioButton
-    private var gender = ""
+    private var gender = "P"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -107,14 +107,16 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun onSuccess(response: NetworkResponse) {
         val data = String(response.data, charset(HttpHeaderParser.parseCharset(response.headers)))
-        val status = JSONObject(data).getInt("status_code")
+        val status_code = JSONObject(data).getInt("status_code")
 
-        if(status == 200){
-            val userId = JSONObject(data).getString("id")
-            val userName = JSONObject(data).getString("name")
-            val userEmail = JSONObject(data).getString("email")
-            val userGender = JSONObject(data).getString("gender")
-            val userAddress = JSONObject(data).getString("address")
+
+
+        if(status_code == 200){
+            val userId = JSONObject(data).getJSONObject("data").getString("id")
+            val userName = JSONObject(data).getJSONObject("data").getString("name")
+            val userEmail = JSONObject(data).getJSONObject("data").getString("email")
+            val userGender = JSONObject(data).getJSONObject("data").getString("gender")
+            val userAddress = JSONObject(data).getJSONObject("data").getString("address")
 
             val sharedPreferences: SharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE)
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
