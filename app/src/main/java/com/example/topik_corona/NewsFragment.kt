@@ -73,7 +73,9 @@ class NewsFragment : Fragment() {
 
         //connection
         AndroidNetworking.initialize(context)
+
         AndroidNetworking.get( Constants.BASE_URL +"showNews.php")
+
                 .build()
                 .getAsObject(News::class.java, object : ParsedRequestListener<News>{
                     override fun onResponse(response: News) {
@@ -91,6 +93,7 @@ class NewsFragment : Fragment() {
 
         AndroidNetworking.initialize(context)
         AndroidNetworking.get(Constants.BASE_URL + "showPopulerNews.php")
+
                 .build()
                 .getAsObject(News::class.java, object : ParsedRequestListener<News>{
                     override fun onResponse(response: News) {

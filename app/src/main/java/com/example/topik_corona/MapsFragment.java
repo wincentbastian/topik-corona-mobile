@@ -45,6 +45,7 @@ public class MapsFragment extends Fragment {
         mWebView = (WebView) v.findViewById(R.id.webview);
 
         mWebView.loadUrl(Constants.BASE_URL + "webview-kelurahan.php");
+
         progressBar =  v.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -102,11 +103,12 @@ public class MapsFragment extends Fragment {
 //                alertDialog.show();
             }
 
-            @Override
-            public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
-                super.onReceivedHttpError(view, request, errorResponse);
-//                Toast.makeText(getContext(), errorResponse.getReasonPhrase(), Toast.LENGTH_LONG).show();
-            }
+
+//            @Override
+//            public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
+//                super.onReceivedHttpError(view, request, errorResponse);
+//                Toast.makeText(getContext(), "Please Check your connection", Toast.LENGTH_LONG).show();
+//            }
         });
 
         return v;
